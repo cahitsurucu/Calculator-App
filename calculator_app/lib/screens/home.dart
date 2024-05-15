@@ -1,4 +1,5 @@
 import 'package:calculator_app/const/color.dart';
+import 'package:calculator_app/services/calculate.dart';
 import 'package:flutter/material.dart';
 import 'package:calculator_app/models/card.dart';
 
@@ -10,6 +11,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Calculate calculate = Calculate("");
+  String _input = "";
+
+  void changeText(String input) {
+    setState(() {
+      _input = input;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,9 +39,9 @@ class _HomeState extends State<Home> {
               color: Colors.amber,
               width: MediaQuery.of(context).size.width,
               height: 110,
-              child: const Text(
-                "Input",
-                style: TextStyle(fontSize: 24),
+              child: Text(
+                _input,
+                style: const TextStyle(fontSize: 24),
               ),
             ),
             Container(
@@ -56,101 +66,141 @@ class _HomeState extends State<Home> {
                   title: "C",
                   color: blue,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "DEL",
                   color: blue,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "%",
                   color: red,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "/",
                   color: red,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "7",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "8",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "9",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
-                  title: "X",
+                  title: "x",
                   color: red,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "4",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "5",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "6",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "-",
                   color: red,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "1",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "2",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "3",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "+",
                   color: red,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "00",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "0",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: ".",
                   color: grey,
                   size: 22,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
                 CardWidget(
                   title: "=",
                   color: blue,
                   size: 26,
+                  calculate: calculate,
+                  changeText: changeText,
                 ),
               ],
             ),
