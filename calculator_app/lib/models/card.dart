@@ -27,13 +27,13 @@ class CardWidget extends StatelessWidget {
             calculate.delete();
             break;
           case "=":
-            calculate.calculate();
+            calculate.convert();
             break;
           default:
             calculate.setData(title);
             break;
         }
-        changeText(calculate.getData());
+        changeText(calculate.getInput(), calculate.getResult());
       },
       child: Container(
         color: color,

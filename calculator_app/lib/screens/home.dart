@@ -11,12 +11,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Calculate calculate = Calculate("");
+  Calculate calculate = Calculate("", "0");
   String _input = "";
+  String _output = "";
 
-  void changeText(String input) {
+  void changeText(String input, String output) {
     setState(() {
       _input = input;
+      _output = output;
     });
   }
 
@@ -36,22 +38,20 @@ class _HomeState extends State<Home> {
           children: [
             Container(
               alignment: Alignment.centerRight,
-              color: Colors.amber,
               width: MediaQuery.of(context).size.width,
               height: 110,
               child: Text(
                 _input,
-                style: const TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 28),
               ),
             ),
             Container(
               alignment: Alignment.centerRight,
-              color: Colors.blueGrey,
               width: MediaQuery.of(context).size.width,
               height: 100,
-              child: const Text(
-                "Output",
-                style: TextStyle(fontSize: 24),
+              child: Text(
+                _output,
+                style: const TextStyle(fontSize: 34),
               ),
             ),
             GridView.count(
